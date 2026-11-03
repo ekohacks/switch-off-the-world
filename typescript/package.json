@@ -1,0 +1,27 @@
+{
+  "name": "switch-off-the-world",
+  "private": true,
+  "type": "module",
+  "description": "Switch off the world: build a Nullable HTTP client, test first. The TypeScript half of the workshop.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "exercise": "vitest run",
+    "exercise:watch": "vitest",
+    "solve": "node scripts/solve.mjs",
+    "reset": "git checkout -- exercises/httpClient.skeleton.ts exercises/retry.skeleton.ts",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check:exercises": "node scripts/check-exercises.mjs",
+    "gate": "npm run typecheck && npm run format:check && npm run check:exercises"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "prettier": "^3.9.6",
+    "typescript": "6.0",
+    "vitest": "^4.1.10"
+  }
+}

@@ -1,0 +1,30 @@
+[project]
+name = "switch-off-the-world"
+version = "0.0.0"
+description = "Switch off the world: build a Nullable HTTP client, test first. The Python half of the workshop."
+requires-python = ">=3.12"
+
+[tool.ruff]
+line-length = 88
+exclude = [".git", "__pycache__", ".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "D"]
+ignore = [
+    "D100",  # Missing docstring in public module
+    "D101",  # Missing docstring in public class
+    "D103",  # Missing docstring in public function
+    "D104",  # Missing docstring in public package
+    "D107",  # Missing docstring in __init__
+    "D203",  # Incompatible with D211
+    "D213",  # Incompatible with D212
+    "E402",  # Module level import not at top of file: the exercises import inside methods
+    "E501",  # Line too long
+]
+
+[tool.pytest.ini_options]
+testpaths = ["workshop"]
+pythonpath = ["."]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+addopts = "--tb=short -p no:warnings"
